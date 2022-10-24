@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Room, RoomList } from './rooms';
 
+//informacion del componente
 @Component({
   selector: 'hinv-rooms',
   templateUrl: './rooms.component.html',
   styleUrls: ['./rooms.component.css'],
 })
+
+//codigo que se ejecuta al iniciar
 export class RoomsComponent implements OnInit {
   hotelName = 'Hilton Hotel';
   numberOfRooms = 10;
@@ -50,7 +53,7 @@ export class RoomsComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
-
+  //funcion de que esconde o muestra ese elemento
   toggle() {
     this.hideRooms = !this.hideRooms;
   }
