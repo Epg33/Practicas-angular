@@ -1,5 +1,5 @@
 <h1>Welcome to {{ hotelName }}</h1>
-<div [hidden]="hideRooms">
+<div [hidden]=hideRooms>
   Number of rooms:
   <div [ngStyle]="{'color' : rooms.aviableRooms ? 'green' : 'red'}"
     [innerText]="numberOfRooms">
@@ -7,6 +7,9 @@
 </div>
 
 {{ rooms?.aviableRooms ?? "no Rooms" }}
+
+<!-- {{roomList | json}} -->
+
 <!-- condicional para renderizar las habitaciones -->
 <div *ngIf="rooms.aviableRooms > 0">
   Rooms List:
@@ -23,13 +26,13 @@
     </tr>
     <!-- clases de elementod y ciclo para rellenar la tabla -->
     <tr [ngClass]="e ? 'even' : 'odd'" *ngFor="let room of roomList; let e = even; let o = odd; let i = index">
-      <td>{{i}}</td>
+      <td>{{i | percent}}</td>
       <td>{{e ? 'Even' : 'Odd'}}</td>
       <td>{{room.roomNumber}}</td>
       <td>{{room.roomType}}</td>
-      <td>{{room.price}}</td>
-      <td>{{room.amenities}}</td>
-      <td>{{room.checkInTime}}</td>
+      <td>{{room.price | currency : 'INR'}}</td>
+      <td>{{room.amenities | titlecase}}</td>
+      <td>{{room.checkInTime | date : 'dd/MMM/YYYY'}}</td>
     </tr>
   </table>
 </div>
