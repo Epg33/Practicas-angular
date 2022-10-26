@@ -8,7 +8,20 @@ app-root {
 }
 
 .main {
-  width: 100%;
+  width: 100vw;
   display: grid;
   place-content: center;
+}
+
+app-cursos {
+
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  place-content: center;
+  place-items: center;
+  box-sizing: border-box;
+}
+
+app-login {
+width: 60vw;
 }
